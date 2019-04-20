@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[PHP:抽象类和接口的区别]]></title>
+    <url>%2F2019%2F03%2F23%2F%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[抽象类:abstract，至少有一个方法是抽象方法，不能被实例化，为子类定义公共接口。接口:interface，解决php的单继承问题，所有方法都是public访问权限的抽象方法，不能声明变量只能声明常量。 hhdaasja]]></content>
+      <categories>
+        <category>PHP</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Test</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[基础架构:一条SQL查询语句是如何执行的?]]></title>
+    <url>%2F2019%2F02%2F23%2F%E4%B8%80%E6%9D%A1SQL%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5%E6%98%AF%E5%A6%82%E4%BD%95%E6%89%A7%E8%A1%8C%E7%9A%84%2F</url>
+    <content type="text"><![CDATA[我们看到的只是输入一条语句，返回一个结果，却不知道这条语句在MySQL内部的执行过程。所以今天我想和你一起把MySQL拆解一下，看看里面都有哪看看里面都有哪些“零件”，希望借由这个拆解过程，让你对MySQL有更深入的理解。这样当我们碰到MySQL的一些异常或者问题时，就能够直戳本质，更为快速地定位并解决问题。]]></content>
+      <categories>
+        <category>Thinking</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Test</tag>
+      </tags>
+  </entry>
+</search>

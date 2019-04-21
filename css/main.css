@@ -1658,9 +1658,9 @@ pre .javascript .function {
 }
 .posts-expand .post-eof {
   display: block;
-  margin: 80px auto 60px;
+/*margin: $post-eof-margin-top auto $post-eof-margin-bottom;*/
+  margin: 10px auto 10px;
   width: 8%;
-  height: 1px;
   background: #ccc;
   text-align: center;
 }
@@ -2024,7 +2024,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #53ffff;
+  background: #ff754e;
 }
 .links-of-blogroll {
   font-size: 13px;

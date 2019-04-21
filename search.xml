@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hexo如何开启代码高亮及行号显示]]></title>
+    <url>%2F2019%2F03%2F23%2Fhexo%2Bnext%E4%B8%BB%E9%A2%98%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AF%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE%E4%BB%A5%E5%8F%8A%E6%98%BE%E7%A4%BA%E8%A1%8C%E5%8F%B7%2F</url>
+    <content type="text"><![CDATA[第一步：修改站点的_config.yml配置文件，找到highlight的配置并修改：1234highlight: enable: true line_number: true auto_detect: true 第二步：修改next主题的_config.yml配置文件，找到highlight_theme的配置并修改。总共有五种主题可选，默认是normal，其他四个可更根据自己的喜好选择，我选择的是night。1highlight_theme: night # normal | night | night eighties | night blue | night bright]]></content>
+      <categories>
+        <category>Hexo配置</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo如何开启搜索功能]]></title>
     <url>%2F2019%2F03%2F23%2Fhexo%2Bnext%E4%B8%BB%E9%A2%98%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AF%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%2F</url>
     <content type="text"><![CDATA[第一步：安装插件在自己的博客的根目录下(我的是myblog)点击鼠标右键选择Git Bash Here:1npm install hexo-generator-searchdb --save 第二步：修改主题配置文件，在根目录下的/themes/next/_config.yml文件中添加配置：12345search: path: search.xml field: post format: html limit: 10000 #根据自己的情况修改数值 同时修改local_search，将enable改为true12local_search: enable: true]]></content>
@@ -13,8 +24,8 @@
   </entry>
   <entry>
     <title><![CDATA[PHP:抽象类和接口的区别]]></title>
-    <url>%2F2019%2F03%2F23%2F%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
-    <content type="text"><![CDATA[抽象类:abstract，至少有一个方法是抽象方法，不能被实例化，为子类定义公共接口。接口:interface，解决php的单继承问题，所有方法都是public访问权限的抽象方法，不能声明变量只能声明常量。 1$a = 123;]]></content>
+    <url>%2F2019%2F02%2F25%2F%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[抽象类:abstract，至少有一个方法是抽象方法，不能被实例化，为子类定义公共接口。接口:interface，解决php的单继承问题，所有方法都是public访问权限的抽象方法，不能声明变量只能声明常量。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374&lt;?phpinterface InterfaceShape &#123; function getArea(); function getCircumference(); &#125; class Rectangle implements InterfaceShape &#123; private $width; private $height; public function __construct($width, $height) &#123; $this-&gt;width = $width; $this-&gt;height = $height; &#125; public function getArea() &#123; return $this-&gt;width* $this-&gt;height; &#125; public function getCircumference() &#123; return 2 * $this-&gt;width + 2 * $this-&gt;height; &#125; &#125; class Circle implements InterfaceShape &#123; private $radius; function __construct($radius) &#123; $this-&gt;radius = $radius; &#125; public function getArea() &#123; return M_PI * pow($this-&gt;radius, 2); &#125; public function getCircumference() &#123; return 2 * M_PI * $this-&gt;radius; &#125; &#125; class FactoryShape &#123; public static function create() &#123; switch (func_num_args()) &#123; case1: return newCircle(func_get_arg(0)); case2: return newRectangle(func_get_arg(0), func_get_arg(1)); default: break; &#125; &#125; &#125; $rect =FactoryShape::create(5, 5); var_dump($rect); echo &quot;&lt;br&gt;&quot;; $circle =FactoryShape::create(4); var_dump($circle);?&gt;]]></content>
       <categories>
         <category>PHP</category>
       </categories>
@@ -24,7 +35,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[基础架构:一条SQL查询语句是如何执行的?]]></title>
+    <title><![CDATA[基础架构:一条SQL查询语句是如何执行的]]></title>
     <url>%2F2019%2F02%2F23%2F%E4%B8%80%E6%9D%A1SQL%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5%E6%98%AF%E5%A6%82%E4%BD%95%E6%89%A7%E8%A1%8C%E7%9A%84%2F</url>
     <content type="text"><![CDATA[我们看到的只是输入一条语句，返回一个结果，却不知道这条语句在MySQL内部的执行过程。所以今天我想和你一起把MySQL拆解一下，看看里面都有哪看看里面都有哪些“零件”，希望借由这个拆解过程，让你对MySQL有更深入的理解。这样当我们碰到MySQL的一些异常或者问题时，就能够直戳本质，更为快速地定位并解决问题。]]></content>
       <categories>

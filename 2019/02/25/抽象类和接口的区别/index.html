@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="生命的等待">
-<meta name="keywords" content="nishu">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://www.terrytang.top/tags/index.html">
+  <meta name="description" content="抽象类:abstract，至少有一个方法是抽象方法，不能被实例化，为子类定义公共接口。接口:interface，解决php的单继承问题，所有方法都是public访问权限的抽象方法，不能声明变量只能声明常量。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525">
+<meta name="keywords" content="PHP,面试题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP:抽象类和接口的区别">
+<meta property="og:url" content="http://www.terrytang.top/2019/02/25/抽象类和接口的区别/index.html">
 <meta property="og:site_name" content="terry.Tang&#39;s Blog">
-<meta property="og:description" content="生命的等待">
+<meta property="og:description" content="抽象类:abstract，至少有一个方法是抽象方法，不能被实例化，为子类定义公共接口。接口:interface，解决php的单继承问题，所有方法都是public访问权限的抽象方法，不能声明变量只能声明常量。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-22T16:24:31.426Z">
+<meta property="og:updated_time" content="2019-04-21T05:51:46.238Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="生命的等待">
+<meta name="twitter:title" content="PHP:抽象类和接口的区别">
+<meta name="twitter:description" content="抽象类:abstract，至少有一个方法是抽象方法，不能被实例化，为子类定义公共接口。接口:interface，解决php的单继承问题，所有方法都是public访问权限的抽象方法，不能声明变量只能声明常量。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525">
 
 
 
 
 
 
-  <link rel="canonical" href="http://www.terrytang.top/tags/">
+  <link rel="canonical" href="http://www.terrytang.top/2019/02/25/抽象类和接口的区别/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>tags | terry.Tang's Blog</title>
+  <title>PHP:抽象类和接口的区别 | terry.Tang's Blog</title>
   
 
 
@@ -261,7 +261,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -366,98 +366,268 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.terrytang.top/2019/02/25/抽象类和接口的区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="terry.Tang">
+      <meta itemprop="description" content="生命的等待">
+      <meta itemprop="image" content="/images/logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="terry.Tang's Blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">tags
-
-</h1>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
+          <h1 class="post-title" itemprop="name headline">PHP:抽象类和接口的区别
+
               
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-              目前共计 4 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/Hexo/" style="font-size: 30px; color: #111">Hexo</a> <a href="/tags/MySQL/" style="font-size: 12px; color: #ccc">MySQL</a> <a href="/tags/PHP/" style="font-size: 12px; color: #ccc">PHP</a> <a href="/tags/面试题/" style="font-size: 12px; color: #ccc">面试题</a>
-            </div>
-          </div>
+            
+          </h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-25 20:43:00" itemprop="dateCreated datePublished" datetime="2019-02-25T20:43:00+08:00">2019-02-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-21 13:51:46" itemprop="dateModified" datetime="2019-04-21T13:51:46+08:00">2019-04-21</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/PHP/" itemprop="url" rel="index"><span itemprop="name">PHP</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>抽象类:abstract，至少有一个方法是抽象方法，不能被实例化，为子类定义公共接口。接口:interface，解决php的单继承问题，所有方法都是public访问权限的抽象方法，不能声明变量只能声明常量。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">interface InterfaceShape   </span><br><span class="line">&#123;  </span><br><span class="line"> function getArea();  </span><br><span class="line"> function getCircumference();  </span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line">class Rectangle implements InterfaceShape  </span><br><span class="line">&#123;  </span><br><span class="line">  private $width;  </span><br><span class="line">  private $height;  </span><br><span class="line">     </span><br><span class="line">  public function __construct($width, $height)  </span><br><span class="line">  &#123;  </span><br><span class="line">    $this-&gt;width = $width;  </span><br><span class="line">    $this-&gt;height = $height;  </span><br><span class="line">  &#125;  </span><br><span class="line">    </span><br><span class="line">  public function getArea()   </span><br><span class="line">  &#123;  </span><br><span class="line">    return $this-&gt;width* $this-&gt;height;  </span><br><span class="line">  &#125;  </span><br><span class="line">    </span><br><span class="line">  public function getCircumference()  </span><br><span class="line">  &#123;  </span><br><span class="line">    return 2 * $this-&gt;width + 2 * $this-&gt;height;  </span><br><span class="line">  &#125;  </span><br><span class="line">&#125;   </span><br><span class="line"></span><br><span class="line">class Circle implements InterfaceShape  </span><br><span class="line">&#123;  </span><br><span class="line">  private $radius;  </span><br><span class="line">    </span><br><span class="line">  function __construct($radius)  </span><br><span class="line">  &#123;  </span><br><span class="line">    $this-&gt;radius = $radius;  </span><br><span class="line">  &#125;</span><br><span class="line">    </span><br><span class="line">  public function getArea()   </span><br><span class="line">  &#123;  </span><br><span class="line">    return M_PI * pow($this-&gt;radius, 2);  </span><br><span class="line">  &#125;  </span><br><span class="line">    </span><br><span class="line">  public function getCircumference()  </span><br><span class="line">  &#123;  </span><br><span class="line">    return 2 * M_PI * $this-&gt;radius;  </span><br><span class="line">  &#125;  </span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line">class FactoryShape   </span><br><span class="line">&#123;   </span><br><span class="line">  public static function create()  </span><br><span class="line">  &#123;  </span><br><span class="line">    switch (func_num_args()) &#123;  </span><br><span class="line">      case1: </span><br><span class="line">      return newCircle(func_get_arg(0));  </span><br><span class="line">      case2:</span><br><span class="line">      return newRectangle(func_get_arg(0), func_get_arg(1));  </span><br><span class="line">      default:</span><br><span class="line">        break; </span><br><span class="line">    &#125; </span><br><span class="line">  &#125;   </span><br><span class="line">&#125;  </span><br><span class="line">    </span><br><span class="line">$rect =FactoryShape::create(5, 5);  </span><br><span class="line">var_dump($rect);  </span><br><span class="line">echo &quot;&lt;br&gt;&quot;;  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$circle =FactoryShape::create(4);  </span><br><span class="line">var_dump($circle);</span><br><span class="line"></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
       
     </div>
+
     
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="terry.Tang 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="terry.Tang 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
 
 
 
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>terry.Tang</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
     
+    <a href="http://www.terrytang.top/2019/02/25/抽象类和接口的区别/" title="PHP:抽象类和接口的区别">http://www.terrytang.top/2019/02/25/抽象类和接口的区别/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
     
+
+	<div>
+		
+		<div>
     
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+		
+	</div>
+	
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag"># PHP</a>
+          
+            <a href="/tags/面试题/" rel="tag"># 面试题</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/23/一条SQL查询语句是如何执行的/" rel="next" title="基础架构:一条SQL查询语句是如何执行的">
+                <i class="fa fa-chevron-left"></i> 基础架构:一条SQL查询语句是如何执行的
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/23/hexo+next主题如何开启搜索功能/" rel="prev" title="Hexo如何开启搜索功能">
+                Hexo如何开启搜索功能 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
   </div>
 
 

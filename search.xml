@@ -42,7 +42,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hexhexo+nextt主题美化之文末统一添加本文结束标记]]></title>
+    <title><![CDATA[hexo+next主题美化之文末统一添加本文结束标记]]></title>
     <url>%2F201901%2Fpost%2F629c2e67.html</url>
     <content type="text"><![CDATA[第一步：在目录 themes/next/layout/_macro/下新增passage-end-tag.swig文件，内容如下：12345&lt;div&gt; &#123;% if not is_index %&#125; &lt;div style=&quot;text-align:center;color:#ccc;font-size:22px;&quot;&gt;-------------本文结束&lt;i class=&quot;fa fa-paw&quot;&gt;&lt;/i&gt;感谢您的阅读-------------&lt;/div&gt; &#123;% endif %&#125;&lt;/div&gt; 第二步：在themes/next/layout/_macro/post.swig文件中新增内容，如下：12345&lt;div&gt; &#123;% if not is_index %&#125; &#123;% include &apos;passage-end-tag.swig&apos; %&#125; &#123;% endif %&#125;&lt;/div&gt; 第三步：在主题配置文件 ，添加代码如下123# 文章末尾添加“本文结束”标记passage_end_tag: enabled: true]]></content>
       <categories>

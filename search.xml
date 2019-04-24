@@ -1,8 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[PHP的工厂模式实现]]></title>
+    <url>%2F201903%2Fpost%2Ffactorypattern.html</url>
+    <content type="text"><![CDATA[工厂模式是一种非常常用的模式，正如其名字所示，确实是对象实例的生产工厂。某些意义上，工厂模式提供了通用的方法有助于我们去获取对象，而不需要关心其具体的内在的实现。使用场景：new实例化类时，每次实例化只需调用工厂类中的方法实例化即可。这样一个类在很多地方被实例化，当类名或参数发生变化时，工厂模式可简单快捷地在工厂类下的方法中一次性修改，避免了一个个的去修改实例化的对象。 工厂模式分为：简单工厂模式、工厂方法模式、抽象工厂模式。 简单工厂模式：通过静态方法创建对象。可以理解成，只负责生产同一等级结构中的任何一个产品，但是不能新增产品。12345678910111213141516171819202122232425262728293031323334353637383940414243444546/** *简单工厂模式 **/interface userProperties &#123; function getUsername(); function getGender(); function getJob(); &#125; class User implements userProperties &#123; private $username; private $gender; private $job; public function __construct($username, $gender, $job) &#123; $this-&gt;username = $username; $this-&gt;gender = $gender; $this-&gt;job = $job; &#125; public function getUsername() &#123; return $this-&gt;username; &#125; public function getGender() &#123; return $this-&gt;gender; &#125; public function getJob() &#123; return $this-&gt;job; &#125; &#125; class userFactory &#123; static public function createUser($properties = []) &#123; return new User($properties[&apos;username&apos;], $properties[&apos;gender&apos;], $properties[&apos;job&apos;]); &#125; &#125; $employers = [ [&apos;username&apos; =&gt; &apos;Jack&apos;, &apos;gender&apos; =&gt; &apos;male&apos;, &apos;job&apos; =&gt; &apos;coder&apos;], [&apos;username&apos; =&gt; &apos;Marry&apos;, &apos;gender&apos; =&gt; &apos;female&apos;, &apos;job&apos; =&gt; &apos;designer&apos;], ]; $user = userFactory::createUser($employers[0]); echo $user-&gt;getUsername(); 工厂方法模式：去掉了简单工厂模式中方法的静态属性，使其可以被子类集成，定义一个创建对象的接口，让子类去决定实例化哪个类。可以理解成，用来生产同一等级结构中的固定产品，但是支持增加产品。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172/** *工厂方法模式 **/interface userProperties &#123; function getUsername(); function getGender(); function getJob(); &#125; interface createUser &#123; function create($properties); &#125; class User implements userProperties &#123; private $username; private $gender; private $job; public function __construct($username, $gender, $job) &#123; $this-&gt;username = $username; $this-&gt;gender = $gender; $this-&gt;job = $job; &#125; public function getUsername() &#123; return $this-&gt;username; &#125; public function getGender() &#123; return $this-&gt;gender; &#125; public function getJob() &#123; return $this-&gt;job; &#125; &#125; class userFactory &#123; private $user; public function __construct($properties = []) &#123; $this-&gt;user = new User($properties[&apos;username&apos;], $properties[&apos;gender&apos;], $properties[&apos;job&apos;]); &#125; public function getUser() &#123; return $this-&gt;user; &#125; &#125; class FactoryMan implements createUser &#123; function create($properties) &#123; return new userFactory($properties); &#125; &#125; class FactoryWoman implements createUser &#123; function create($properties) &#123; return new userFactory($properties); &#125; &#125; class clientUser &#123; static public function getClient($properties) &#123; $fac = new FactoryMan; $man = $fac-&gt;create($properties); echo $man-&gt;getUser()-&gt;getUsername(); &#125; &#125; $employers = [ [&apos;username&apos; =&gt; &apos;Jack&apos;, &apos;gender&apos; =&gt; &apos;male&apos;, &apos;job&apos; =&gt; &apos;coder&apos;], [&apos;username&apos; =&gt; &apos;Marry&apos;, &apos;gender&apos; =&gt; &apos;female&apos;, &apos;job&apos; =&gt; &apos;designer&apos;], ]; $user = clientUser::getClient($employers[0]); 抽象工厂模式：提供一个创建一系列相关或者相互依赖的对象的接口。可以理解成，用来生产不用类型的全部产品，但是不能增加新品，支持增加新的类型。123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081/** *抽象工厂模式 **/interface userProperties &#123; function getUsername(); function getGender(); function getJob(); &#125; interface createUser &#123; //将对象的创建抽象成一个接口 function createOpen($properties);//内向创建 function createIntro($properties);//外向创建 &#125; class User implements userProperties &#123; private $username; private $gender; private $job; public function __construct($username, $gender, $job) &#123; $this-&gt;username = $username; $this-&gt;gender = $gender; $this-&gt;job = $job; &#125; public function getUsername() &#123; return $this-&gt;username; &#125; public function getGender() &#123; return $this-&gt;gender; &#125; public function getJob() &#123; return $this-&gt;job; &#125; &#125; class userFactory &#123; private $user; public function __construct($properties = []) &#123; $this-&gt;user = new User($properties[&apos;username&apos;], $properties[&apos;gender&apos;], $properties[&apos;job&apos;]); &#125; public function getUser() &#123; return $this-&gt;user; &#125; &#125; class FactoryMan implements createUser &#123; function createOpen($properties) &#123; return new userFactory($properties); &#125; function createIntro($properties) &#123; return new userFactory($properties); &#125; &#125; class FactoryWoman implements createUser &#123; function createOpen($properties) &#123; return new userFactory($properties); &#125; function createIntro($properties) &#123; return new userFactory($properties); &#125; &#125; class clientUser &#123; static public function getClient($properties) &#123; $fac = new FactoryMan; $man = $fac-&gt;createOpen($properties); echo $man-&gt;getUser()-&gt;getUsername(); &#125; &#125; $employers = [ [&apos;username&apos; =&gt; &apos;Jack&apos;, &apos;gender&apos; =&gt; &apos;male&apos;, &apos;job&apos; =&gt; &apos;coder&apos;], [&apos;username&apos; =&gt; &apos;Marry&apos;, &apos;gender&apos; =&gt; &apos;female&apos;, &apos;job&apos; =&gt; &apos;designer&apos;], ]; $user = clientUser::getClient($employers[0]);]]></content>
+      <tags>
+        <tag>PHP</tag>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PHP的单例模式实现]]></title>
+    <url>%2F201903%2Fpost%2Fsingletonpattern.html</url>
+    <content type="text"><![CDATA[单例模式又称为职责模式，它主要是用来在程序中创建一个单一功能的访问点，通俗地说就是实例化出来的对象是唯一的。所有的单例模式至少拥有以下三种公共元素： 它们必须拥有一个构造函数，并且必须被标记为private。 它们拥有一个保存类的实例的静态成员变量。 它们拥有一个访问这个实例的公共的静态方法。单例类不能再其它类中直接实例化，只能被其自身实例化。它不会创建实例副本，而是会向单例类内部存储的实例返回一个引用。 123456789101112131415161718192021222324252627class Single &#123; private $name;//声明一个私有的实例变量 private function __construct()&#123; //声明私有构造方法,为了防止外部代码使用new来创建对象。 &#125; static public $instance;//声明一个静态变量(保存在类中唯一的一个实例) static public function getinstance()&#123;//声明一个getinstance()静态方法,用于检测是否有实例对象 if(!self::$instance) self::$instance = new self(); return self::$instance; &#125; public function setname($n)&#123; $this-&gt;name = $n; &#125; public function getname()&#123; return $this-&gt;name; &#125;&#125;$a = Single::getinstance();$b = Single::getinstance();$a-&gt;setname(&apos;hello world&apos;);$b-&gt;setname(&apos;hello php&apos;);echo $a-&gt;getname();//hello phpecho $b-&gt;getname();//hello php]]></content>
+      <tags>
+        <tag>PHP</tag>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[PHP:抽象类和接口的区别]]></title>
-    <url>%2F2019%2F02%2F25%2F%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <url>%2F201902%2Fpost%2F5f908041.html</url>
     <content type="text"><![CDATA[抽象类:abstract，至少有一个方法是抽象方法，不能被实例化，为子类定义公共接口。接口:interface，解决php的单继承问题，所有方法都是public访问权限的抽象方法，不能声明变量只能声明常量。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374&lt;?phpinterface InterfaceShape &#123; function getArea(); function getCircumference(); &#125; class Rectangle implements InterfaceShape &#123; private $width; private $height; public function __construct($width, $height) &#123; $this-&gt;width = $width; $this-&gt;height = $height; &#125; public function getArea() &#123; return $this-&gt;width* $this-&gt;height; &#125; public function getCircumference() &#123; return 2 * $this-&gt;width + 2 * $this-&gt;height; &#125; &#125; class Circle implements InterfaceShape &#123; private $radius; function __construct($radius) &#123; $this-&gt;radius = $radius; &#125; public function getArea() &#123; return M_PI * pow($this-&gt;radius, 2); &#125; public function getCircumference() &#123; return 2 * M_PI * $this-&gt;radius; &#125; &#125; class FactoryShape &#123; public static function create() &#123; switch (func_num_args()) &#123; case1: return newCircle(func_get_arg(0)); case2: return newRectangle(func_get_arg(0), func_get_arg(1)); default: break; &#125; &#125; &#125; $rect =FactoryShape::create(5, 5); var_dump($rect); echo &quot;&lt;br&gt;&quot;; $circle =FactoryShape::create(4); var_dump($circle);?&gt;]]></content>
       <categories>
         <category>PHP</category>
@@ -14,7 +32,7 @@
   </entry>
   <entry>
     <title><![CDATA[一条SQL查询语句到底是如何执行的]]></title>
-    <url>%2F2019%2F02%2F23%2F%E4%B8%80%E6%9D%A1SQL%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5%E6%98%AF%E5%A6%82%E4%BD%95%E6%89%A7%E8%A1%8C%E7%9A%84%2F</url>
+    <url>%2F201902%2Fpost%2F5d62264b.html</url>
     <content type="text"><![CDATA[我们常常只是输入一条SQL语句，就会返回一个结果，却不知道这条语句在MySQL内部的执行过程。我也一直很好奇，所以就找了一些大神的杰作看看，终于算是明白了一些东西。我想也有其他刚接触MySQL的同学也有我这样的疑问。借此机会，和大家一起分享学习一下。 大体来说，MySQL可以分为Server层和存储引擎层两部分。 Server 层包括连接器、查询缓存、分析器、优化器、执行器等，涵盖 MySQL 的大多数核心服务功能，以及所有的内置函数（如日期、时间、数学和加密函数等），所有跨存储引擎的功能都在这一层实现，比如存储过程、触发器、视图等。 第一步：首先要连接到你要操作的这个数据库上，这时候接待你的就是连接器。连接器负责跟客户端建立连接、获取权限、维持和管理连接。连接命令一般是这么写的：1mysql -h$ip -P$port -u$user -p 输完命令之后，你就需要在交互对话里面输入密码。虽然密码也可以直接跟在-p后面写在命令行中，但这样可能会导致你的密码泄露。如果你连的是生产服务器，强烈建议你不要这么做。连接命令中的mysql是客户端工具，用来跟服务端建立连接。在完成经典的 TCP 握手后，连接器就要开始认证你的身份，这个时候用的就是你输入的用户名和密码。如果用户名或密码不对，你就会收到一个”Access denied for user”的错误，然后客户端程序结束执行。如果用户名密码认证通过，连接器会到权限表里面查出你拥有的权限。之后，这个连接里面的权限判断逻辑，都将依赖于此时读到的权限。这就意味着，一个用户成功建立连接后，即使你用管理员账号对这个用户的权限做了修改，也不会影响已经存在连接的权限。修改完成后，只有再新建的连接才会使用新的权限设置。 连接完成后，如果你没有后续的动作，这个连接就处于空闲状态，可以用show processlist命令中看到它。 客户端如果太长时间没动静，连接器就会自动将它断开。这个时间是由参数wait_timeout控制的，默认值是8小时。 如果在连接被断开之后，客户端再次发送请求的话，就会收到一个错误提醒： Lost connection to MySQL server during query。这时候如果你要继续，就需要重连，然后再执行请求了。 数据库里面，长连接是指连接成功后，如果客户端持续有请求，则一直使用同一个连接。短连接则是指每次执行完很少的几次查询就断开连接，下次查询再重新建立一个。 连接建立完成后，你就可以执行select语句了。执行逻辑就会来到第二步：查询缓存。MySQL拿到一个查询请求后，会先到查询缓存看看，之前是不是执行过这条语句。之前执行过的语句及其结果可能会以 key-value 对的形式，被直接缓存在内存中。key 是查询的语句，value是查询的结果。如果你的查询能够直接在这个缓存中找到key，那么这个value就会被直接返回给客户端。如果语句不在查询缓存中，就会继续后面的执行阶段。执行完成后，执行结果会被存入查询缓存中。你可以看到，如果查询命中缓存，MySQL 不需要执行后面的复杂操作，就可以直接返回结果，这个效率会很高。 但是大多数情况下我会建议你不要使用查询缓存，为什么呢？因为查查询缓存往往弊大于利。 查询缓存的失效非常频繁，只要有对一个表的更新，这个表上所有的查询缓存都会被清空。因此很可能你费劲地把结果存起来，还没使用呢，就被一个更新全清空了。对于更新压力大的数据库来说，查询缓存的命中率会非常低。除非你的业务就是有一张静态表，很长时间才会更新一次。比如，一个系统配置表，那这张表上的查询才适合使用查询缓存。 如果没有命中查询缓存，就要开始真正执行语句了。首先，MySQ需要知道你要做什么，因此需要对 SQL 语句做解析。分析器先会做“词法分析”。你输入的是由多个字符串和空格组成的一条 SQL 语句，MySQL 需要识别出里面的字符串分别是什么，代表什么。 做完了这些识别以后，就要做“语法分析”。根据词法分析的结果，语法分析器会根据语法规则，判断你输入的这个 SQL 语句是否满足 MySQL 语法。如果语句不对，就会收到“You have an error in your SQL syntax”的错误提醒。 经过了分析器，MySQL 就知道你要做什么了。在开始执行之前，还要先经过优化器的处理。优化器是在表里面有多个索引的时候，决定使用哪个索引，或者在一个语句有多表关联（join）的时候，决定各个表的连接顺序。比如你执行下面这样的语句，这个语句是执行两个表的 join： MySQL 通过分析器知道了你要做什么，通过优化器知道了该怎么做，于是就进入了执行器阶段，开始执行语句。开始执行的时候，要先判断一下你对这个表T有没有执行查询的权限，如果没有，就会返回没有权限的错误，如下所示 (在工程实现上，如果命中查询缓存，会在查询缓存返回结果的时候，做权限验证。查询也会在优化器之前调用precheck 验证权限)。 附上MySQL的基本架构示意图，从中你可以清楚地看到SQL语句在MySQL的各个功能模块中的执行过程。]]></content>
       <categories>
         <category>MySQL</category>
@@ -25,7 +43,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hexhexo+nextt主题美化之文末统一添加本文结束标记]]></title>
-    <url>%2F2019%2F01%2F07%2Fhexo-next%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%E4%B9%8B%E6%96%87%E6%9C%AB%E7%BB%9F%E4%B8%80%E6%B7%BB%E5%8A%A0%E6%9C%AC%E6%96%87%E7%BB%93%E6%9D%9F%E6%A0%87%E8%AE%B0%2F</url>
+    <url>%2F201901%2Fpost%2F629c2e67.html</url>
     <content type="text"><![CDATA[第一步：在目录 themes/next/layout/_macro/下新增passage-end-tag.swig文件，内容如下：12345&lt;div&gt; &#123;% if not is_index %&#125; &lt;div style=&quot;text-align:center;color:#ccc;font-size:22px;&quot;&gt;-------------本文结束&lt;i class=&quot;fa fa-paw&quot;&gt;&lt;/i&gt;感谢您的阅读-------------&lt;/div&gt; &#123;% endif %&#125;&lt;/div&gt; 第二步：在themes/next/layout/_macro/post.swig文件中新增内容，如下：12345&lt;div&gt; &#123;% if not is_index %&#125; &#123;% include &apos;passage-end-tag.swig&apos; %&#125; &#123;% endif %&#125;&lt;/div&gt; 第三步：在主题配置文件 ，添加代码如下123# 文章末尾添加“本文结束”标记passage_end_tag: enabled: true]]></content>
       <categories>
         <category>Hexo配置</category>
@@ -35,8 +53,16 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[hexo永久链接设置]]></title>
+    <url>%2F201901%2Fpost%2Fpermanentlink.html</url>
+    <content type="text"><![CDATA[hexo的默认url是年/月/日/标题，这样其实不利于SEO。1permalink: :year/:month/:day/:title/ # 默认链接 解决办法一、编辑站点配置文件，自定义id：1permalink: :id.html # 尽量短，层次少，全小写，中划线连字，具有描述性，包含关键词 二、使用abbrlink链接唯一化安装abbrlink插件：1npm install hexo-abbrlink --save 编辑站点配置文件：1234permalink: :abbrlink.html #生成唯一链接abbrlink: alg: crc32 # 算法：crc16(default) and crc32 rep: dec # 进制：dec(default) and hex]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo如何开启搜索功能]]></title>
-    <url>%2F2019%2F01%2F03%2Fhexo%2Bnext%E4%B8%BB%E9%A2%98%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AF%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%2F</url>
+    <url>%2F201901%2Fpost%2Fad63f4dc.html</url>
     <content type="text"><![CDATA[第一步：安装插件在自己的博客的根目录下(我的是myblog)点击鼠标右键选择Git Bash Here:1npm install hexo-generator-searchdb --save 第二步：修改主题配置文件，在根目录下的/themes/next/_config.yml文件中添加配置：12345search: path: search.xml field: post format: html limit: 10000 #根据自己的情况修改数值 同时修改local_search，将enable改为true12local_search: enable: true]]></content>
       <categories>
         <category>Hexo配置</category>
@@ -47,7 +73,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hexo如何开启代码高亮及行号显示]]></title>
-    <url>%2F2019%2F01%2F01%2Fhexo%2Bnext%E4%B8%BB%E9%A2%98%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AF%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE%E4%BB%A5%E5%8F%8A%E6%98%BE%E7%A4%BA%E8%A1%8C%E5%8F%B7%2F</url>
+    <url>%2F201901%2Fpost%2Fcd6f8787.html</url>
     <content type="text"><![CDATA[第一步：修改站点的_config.yml配置文件，找到highlight的配置并修改：1234highlight: enable: true line_number: true auto_detect: true 第二步：修改next主题的_config.yml配置文件，找到highlight_theme的配置并修改。总共有五种主题可选，默认是normal，其他四个可更根据自己的喜好选择，我选择的是night。1highlight_theme: night # normal | night | night eighties | night blue | night bright]]></content>
       <categories>
         <category>Hexo配置</category>
@@ -58,7 +84,7 @@
   </entry>
   <entry>
     <title><![CDATA[hexo常用命令]]></title>
-    <url>%2F2018%2F12%2F16%2Fhexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
+    <url>%2F201812%2Fpost%2F33f59116.html</url>
     <content type="text"><![CDATA[安装初始化123456789npm install hexo -g #安装 npm update hexo -g #升级 hexo init #初始化hexo n &quot;我的博客&quot; == hexo new &quot;我的博客&quot; #新建文章hexo p == hexo publishhexo g == hexo generate #生成hexo s == hexo server #启动服务预览hexo d == hexo deploy #部署 服务器12345678hexo server #Hexo 会监视文件变动并自动更新，您无须重启服务器。hexo server -s #静态模式hexo server -p 5000 #更改端口hexo server -i 192.168.1.1 #自定义 IPhexo clean #清除缓存 网页正常情况下可以忽略此条命令hexo g #生成静态网页hexo d #开始部署 监视文件变动 12hexo generate #使用 Hexo 生成静态文件快速而且简单hexo generate --watch #监视文件变动 写作12hexo new page &lt;title&gt;hexo new post &lt;title&gt;]]></content>
       <categories>
         <category>工具使用</category>

@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="生命的等待">
-<meta name="keywords" content="terry 萌萌">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://www.terrytang.top/about/index.html">
+  <meta name="description" content="单例模式又称为职责模式，它主要是用来在程序中创建一个单一功能的访问点，通俗地说就是实例化出来的对象是唯一的。所有的单例模式至少拥有以下三种公共元素：  它们必须拥有一个构造函数，并且必须被标记为private。 它们拥有一个保存类的实例的静态成员变量。 它们拥有一个访问这个实例的公共的静态方法。单例类不能再其它类中直接实例化，只能被其自身实例化。它不会创建实例副本，而是会向单例类内部存储的实例返回">
+<meta name="keywords" content="PHP,设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP的单例模式实现">
+<meta property="og:url" content="http://www.terrytang.top/201903/post/singletonpattern.html">
 <meta property="og:site_name" content="terry.Tang&#39;s Blog">
-<meta property="og:description" content="生命的等待">
+<meta property="og:description" content="单例模式又称为职责模式，它主要是用来在程序中创建一个单一功能的访问点，通俗地说就是实例化出来的对象是唯一的。所有的单例模式至少拥有以下三种公共元素：  它们必须拥有一个构造函数，并且必须被标记为private。 它们拥有一个保存类的实例的静态成员变量。 它们拥有一个访问这个实例的公共的静态方法。单例类不能再其它类中直接实例化，只能被其自身实例化。它不会创建实例副本，而是会向单例类内部存储的实例返回">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-24T12:32:04.045Z">
+<meta property="og:updated_time" content="2019-04-24T14:40:59.992Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="生命的等待">
+<meta name="twitter:title" content="PHP的单例模式实现">
+<meta name="twitter:description" content="单例模式又称为职责模式，它主要是用来在程序中创建一个单一功能的访问点，通俗地说就是实例化出来的对象是唯一的。所有的单例模式至少拥有以下三种公共元素：  它们必须拥有一个构造函数，并且必须被标记为private。 它们拥有一个保存类的实例的静态成员变量。 它们拥有一个访问这个实例的公共的静态方法。单例类不能再其它类中直接实例化，只能被其自身实例化。它不会创建实例副本，而是会向单例类内部存储的实例返回">
 
 
 
 
 
 
-  <link rel="canonical" href="http://www.terrytang.top/about/">
+  <link rel="canonical" href="http://www.terrytang.top/201903/post/singletonpattern.html">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>about | terry.Tang's Blog</title>
+  <title>PHP的单例模式实现 | terry.Tang's Blog</title>
   
 
 
@@ -244,7 +244,7 @@
         
         
           
-          <li class="menu-item menu-item-about menu-item-active">
+          <li class="menu-item menu-item-about">
 
     
     
@@ -366,28 +366,6 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
@@ -408,7 +386,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.terrytang.top/about/index.html">
+    <link itemprop="mainEntityOfPage" href="http://www.terrytang.top/201903/post/singletonpattern.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="terry.Tang">
@@ -425,7 +403,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">about
+          <h1 class="post-title" itemprop="name headline">PHP的单例模式实现
 
               
             
@@ -451,7 +429,7 @@
                 
               
 
-              <time title="创建时间：2019-02-23 00:48:02" itemprop="dateCreated datePublished" datetime="2019-02-23T00:48:02+08:00">2019-02-23</time>
+              <time title="创建时间：2019-03-02 14:23:00" itemprop="dateCreated datePublished" datetime="2019-03-02T14:23:00+08:00">2019-03-02</time>
             
 
             
@@ -461,7 +439,7 @@
           
 		  
 		  <span title="字数统计"> | 
-			字数统计 0字
+			字数统计 338字
 		  </span>
 		  <span title="阅读时长"> | 
 			阅读时长 1分钟
@@ -497,7 +475,13 @@
       
 
       
-        
+        <p>单例模式又称为职责模式，它主要是用来在程序中创建一个单一功能的访问点，通俗地说就是实例化出来的对象是唯一的。<br>所有的单例模式至少拥有以下三种公共元素：</p>
+<ol>
+<li>它们必须拥有一个构造函数，并且必须被标记为private。</li>
+<li>它们拥有一个保存类的实例的静态成员变量。</li>
+<li>它们拥有一个访问这个实例的公共的静态方法。<br>单例类不能再其它类中直接实例化，只能被其自身实例化。它不会创建实例副本，而是会向单例类内部存储的实例返回一个引用。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class Single &#123;</span><br><span class="line"></span><br><span class="line">     private $name;//声明一个私有的实例变量</span><br><span class="line">     private function __construct()&#123;</span><br><span class="line">		//声明私有构造方法,为了防止外部代码使用new来创建对象。</span><br><span class="line">     &#125;</span><br><span class="line"> </span><br><span class="line">     static public $instance;//声明一个静态变量(保存在类中唯一的一个实例)</span><br><span class="line">     static public function getinstance()&#123;//声明一个getinstance()静态方法,用于检测是否有实例对象</span><br><span class="line">         if(!self::$instance) self::$instance = new self();</span><br><span class="line">         return self::$instance;</span><br><span class="line">     &#125;</span><br><span class="line"> </span><br><span class="line">     public function setname($n)&#123;</span><br><span class="line">		$this-&gt;name = $n; </span><br><span class="line">	 &#125;</span><br><span class="line">     public function getname()&#123;</span><br><span class="line">		return $this-&gt;name; </span><br><span class="line">	 &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$a = Single::getinstance();</span><br><span class="line">$b = Single::getinstance();</span><br><span class="line">$a-&gt;setname(&apos;hello world&apos;);</span><br><span class="line">$b-&gt;setname(&apos;hello php&apos;);</span><br><span class="line">echo $a-&gt;getname();//hello php</span><br><span class="line">echo $b-&gt;getname();//hello php</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -559,7 +543,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="http://www.terrytang.top/about/index.html" title="about">http://www.terrytang.top/about/index.html</a>
+    <a href="http://www.terrytang.top/201903/post/singletonpattern.html" title="PHP的单例模式实现">http://www.terrytang.top/201903/post/singletonpattern.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -581,11 +565,39 @@
 	
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag"># PHP</a>
+          
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
+          
+        </div>
+      
 
       
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/201902/post/5f908041.html" rel="next" title="PHP:抽象类和接口的区别">
+                <i class="fa fa-chevron-left"></i> PHP:抽象类和接口的区别
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/201903/post/factorypattern.html" rel="prev" title="PHP的工厂模式实现">
+                PHP的工厂模式实现 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       

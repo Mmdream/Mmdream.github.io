@@ -386,7 +386,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.terrytang.top/2019/02/25/抽象类和接口的区别/">
+    <link itemprop="mainEntityOfPage" href="http://www.terrytang.top/201903/post/factorypattern.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="terry.Tang">
@@ -406,7 +406,341 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/02/25/抽象类和接口的区别/" class="post-title-link" itemprop="url">PHP:抽象类和接口的区别</a>
+                <a href="/201903/post/factorypattern.html" class="post-title-link" itemprop="url">PHP的工厂模式实现</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-03 11:40:00" itemprop="dateCreated datePublished" datetime="2019-03-03T11:40:00+08:00">2019-03-03</time>
+            
+
+            
+          </span>
+		  
+		  
+          
+		  
+		  <span title="字数统计"> | 
+			字数统计 1k字
+		  </span>
+		  <span title="阅读时长"> | 
+			阅读时长 5分钟
+		  </span>
+		  <span title="阅读次数"> | 
+			阅读次数 次
+		  </span>
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              工厂模式是一种非常常用的模式，正如其名字所示，确实是对象实例的生产工厂。某些意义上，工厂模式提供了通用的方法有助于我们去获取对象，而不需要关心其具体的内在的实现。使用场景：new实例化类时，每次实例化只需调用工厂类中的方法实例化即可。这样一个类在很多地方被实例化，当类名或参数发生变化时，工厂模式可简
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/201903/post/factorypattern.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+	<div>
+		
+	</div>
+	
+	
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.terrytang.top/201903/post/singletonpattern.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="terry.Tang">
+      <meta itemprop="description" content="生命的等待">
+      <meta itemprop="image" content="/images/logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="terry.Tang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/201903/post/singletonpattern.html" class="post-title-link" itemprop="url">PHP的单例模式实现</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-02 14:23:00" itemprop="dateCreated datePublished" datetime="2019-03-02T14:23:00+08:00">2019-03-02</time>
+            
+
+            
+          </span>
+		  
+		  
+          
+		  
+		  <span title="字数统计"> | 
+			字数统计 338字
+		  </span>
+		  <span title="阅读时长"> | 
+			阅读时长 1分钟
+		  </span>
+		  <span title="阅读次数"> | 
+			阅读次数 次
+		  </span>
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              单例模式又称为职责模式，它主要是用来在程序中创建一个单一功能的访问点，通俗地说就是实例化出来的对象是唯一的。所有的单例模式至少拥有以下三种公共元素：
+
+它们必须拥有一个构造函数，并且必须被标记为private。
+它们拥有一个保存类的实例的静态成员变量。
+它们拥有一个访问这个实例的公共的静态方法。单例
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/201903/post/singletonpattern.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+	<div>
+		
+	</div>
+	
+	
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.terrytang.top/201902/post/5f908041.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="terry.Tang">
+      <meta itemprop="description" content="生命的等待">
+      <meta itemprop="image" content="/images/logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="terry.Tang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/201902/post/5f908041.html" class="post-title-link" itemprop="url">PHP:抽象类和接口的区别</a>
               
             
           </h1>
@@ -505,7 +839,7 @@
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/02/25/抽象类和接口的区别/#more" rel="contents">
+              <a class="btn" href="/201902/post/5f908041.html#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -570,7 +904,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.terrytang.top/2019/02/23/一条SQL查询语句是如何执行的/">
+    <link itemprop="mainEntityOfPage" href="http://www.terrytang.top/201902/post/5d62264b.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="terry.Tang">
@@ -590,7 +924,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/02/23/一条SQL查询语句是如何执行的/" class="post-title-link" itemprop="url">一条SQL查询语句到底是如何执行的</a>
+                <a href="/201902/post/5d62264b.html" class="post-title-link" itemprop="url">一条SQL查询语句到底是如何执行的</a>
               
             
           </h1>
@@ -689,7 +1023,7 @@
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/02/23/一条SQL查询语句是如何执行的/#more" rel="contents">
+              <a class="btn" href="/201902/post/5d62264b.html#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -754,7 +1088,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.terrytang.top/2019/01/07/hexo-next主题美化之文末统一添加本文结束标记/">
+    <link itemprop="mainEntityOfPage" href="http://www.terrytang.top/201901/post/629c2e67.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="terry.Tang">
@@ -774,7 +1108,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/01/07/hexo-next主题美化之文末统一添加本文结束标记/" class="post-title-link" itemprop="url">Hexhexo+nextt主题美化之文末统一添加本文结束标记</a>
+                <a href="/201901/post/629c2e67.html" class="post-title-link" itemprop="url">Hexhexo+nextt主题美化之文末统一添加本文结束标记</a>
               
             
           </h1>
@@ -872,7 +1206,7 @@
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/01/07/hexo-next主题美化之文末统一添加本文结束标记/#more" rel="contents">
+              <a class="btn" href="/201901/post/629c2e67.html#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -937,7 +1271,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.terrytang.top/2019/01/03/hexo+next主题如何开启搜索功能/">
+    <link itemprop="mainEntityOfPage" href="http://www.terrytang.top/201901/post/permanentlink.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="terry.Tang">
@@ -957,7 +1291,174 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/01/03/hexo+next主题如何开启搜索功能/" class="post-title-link" itemprop="url">Hexo如何开启搜索功能</a>
+                <a href="/201901/post/permanentlink.html" class="post-title-link" itemprop="url">hexo永久链接设置</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-03 22:13:00" itemprop="dateCreated datePublished" datetime="2019-01-03T22:13:00+08:00">2019-01-03</time>
+            
+
+            
+          </span>
+		  
+		  
+          
+		  
+		  <span title="字数统计"> | 
+			字数统计 123字
+		  </span>
+		  <span title="阅读时长"> | 
+			阅读时长 1分钟
+		  </span>
+		  <span title="阅读次数"> | 
+			阅读次数 次
+		  </span>
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              hexo的默认url是年/月/日/标题，这样其实不利于SEO。permalink: :year/:month/:day/:title/  # 默认链接
+解决办法一、编辑站点配置文件，自定义id：permalink: :id.html # 尽量短，层次少，全小写，中划线连字，具有描述性，包含关键词
+二
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/201901/post/permanentlink.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+	<div>
+		
+	</div>
+	
+	
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.terrytang.top/201901/post/ad63f4dc.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="terry.Tang">
+      <meta itemprop="description" content="生命的等待">
+      <meta itemprop="image" content="/images/logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="terry.Tang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/201901/post/ad63f4dc.html" class="post-title-link" itemprop="url">Hexo如何开启搜索功能</a>
               
             
           </h1>
@@ -1056,7 +1557,7 @@
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/01/03/hexo+next主题如何开启搜索功能/#more" rel="contents">
+              <a class="btn" href="/201901/post/ad63f4dc.html#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1121,7 +1622,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.terrytang.top/2019/01/01/hexo+next主题如何开启代码高亮以及显示行号/">
+    <link itemprop="mainEntityOfPage" href="http://www.terrytang.top/201901/post/cd6f8787.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="terry.Tang">
@@ -1141,7 +1642,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/01/01/hexo+next主题如何开启代码高亮以及显示行号/" class="post-title-link" itemprop="url">Hexo如何开启代码高亮及行号显示</a>
+                <a href="/201901/post/cd6f8787.html" class="post-title-link" itemprop="url">Hexo如何开启代码高亮及行号显示</a>
               
             
           </h1>
@@ -1240,7 +1741,7 @@
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/01/01/hexo+next主题如何开启代码高亮以及显示行号/#more" rel="contents">
+              <a class="btn" href="/201901/post/cd6f8787.html#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1305,7 +1806,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.terrytang.top/2018/12/16/hexo常用命令/">
+    <link itemprop="mainEntityOfPage" href="http://www.terrytang.top/201812/post/33f59116.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="terry.Tang">
@@ -1325,7 +1826,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/12/16/hexo常用命令/" class="post-title-link" itemprop="url">hexo常用命令</a>
+                <a href="/201812/post/33f59116.html" class="post-title-link" itemprop="url">hexo常用命令</a>
               
             
           </h1>
@@ -1423,7 +1924,7 @@
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/12/16/hexo常用命令/#more" rel="contents">
+              <a class="btn" href="/201812/post/33f59116.html#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1518,7 +2019,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1560,7 +2061,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

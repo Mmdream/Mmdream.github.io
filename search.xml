@@ -104,4 +104,15 @@
         <tag>面试题</tag>
       </tags>
   </entry>
+  <entry>
+    <title><![CDATA[apt-get和yum的区别]]></title>
+    <url>%2F201810%2Fpost%2F1dc30d45.html</url>
+    <content type="text"><![CDATA[Linux系统基本上分两大类：1 RedHat系列：Redhat、Centos、Fedora等；2 Debian系列：Debian、Ubuntu等；对于RedHat系列：1 常见的安装包格式rpm包，安装rpm包的命令是 “rpm -参数”；2 包管理工具 yum；3 支持tar包；yum可以用于运作rpm包，常用命令如下：123456789yum install &lt;package_name&gt; //安装包yum remove &lt;package_name&gt; //卸载包yum update &lt;package_name&gt; //更新包yum search &lt;keyword&gt; //查找软件包yum list //列出所有可安装的软件包yum list updates //列出所有可更新的软件包yum list installed //列出所有已安装的软件包yum list extras //列出所有已安装但不在Yum Repository内的软件包yum list &lt;package_name&gt; //列出所指定的软件包 对于Debian系列：1 常见的安装包格式deb包，安装deb包的命令是 “dpkg -参数”；2 包管理工具 apt-get；3 支持tar包；apt-get可以用于运作deb包，常用命令如下：123456789101112131415161718apt-get install &lt;package_name&gt; //安装包apt-get remove &lt;package_name&gt; //卸载包apt-get update &lt;package_name&gt; //更新包apt-cache search package //搜索包apt-cache show package //获取包的相关信息sudo apt-get install package -- reinstall //重新安装包sudo apt-get -f install //修复安装&quot;-f = --fix-missing&quot;sudo apt-get remove package -- purge // 删除包，包括删除配置文件等sudo apt-get update //更新源sudo apt-get upgrade //更新已安装的包sudo apt-get dist-upgrade //升级系统sudo apt-get dselect-upgrade //使用dselect升级apt-cache depends package //了解使用依赖apt-cache rdepends package //是查看该包被哪些包依赖sudo apt-get build-dep package //安装相关的编译环境apt-get source package //下载该包的源代码sudo apt-get clean &amp;&amp; sudo apt-get autoclean //清理无用的包sudo apt-get check //检查是否有损坏的依赖]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
 </search>

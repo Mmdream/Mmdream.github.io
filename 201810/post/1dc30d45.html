@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="工厂模式是一种非常常用的模式，正如其名字所示，确实是对象实例的生产工厂。某些意义上，工厂模式提供了通用的方法有助于我们去获取对象，而不需要关心其具体的内在的实现。使用场景：new实例化类时，每次实例化只需调用工厂类中的方法实例化即可。这样一个类在很多地方被实例化，当类名或参数发生变化时，工厂模式可简单快捷地在工厂类下的方法中一次性修改，避免了一个个的去修改实例化的对象。 工厂模式分为：简单工厂模式">
-<meta name="keywords" content="PHP,设计模式">
+  <meta name="description" content="Linux系统基本上分两大类：1 RedHat系列：Redhat、Centos、Fedora等；2 Debian系列：Debian、Ubuntu等；对于RedHat系列：1 常见的安装包格式rpm包，安装rpm包的命令是 “rpm -参数”；2 包管理工具 yum；3 支持tar包；yum可以用于运作rpm包，常用命令如下：123456789yum install &amp;lt;package_name">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PHP的工厂模式实现">
-<meta property="og:url" content="http://www.terrytang.top/201903/post/factorypattern.html">
+<meta property="og:title" content="apt-get和yum的区别">
+<meta property="og:url" content="http://www.terrytang.top/201810/post/1dc30d45.html">
 <meta property="og:site_name" content="terry.Tang&#39;s Blog">
-<meta property="og:description" content="工厂模式是一种非常常用的模式，正如其名字所示，确实是对象实例的生产工厂。某些意义上，工厂模式提供了通用的方法有助于我们去获取对象，而不需要关心其具体的内在的实现。使用场景：new实例化类时，每次实例化只需调用工厂类中的方法实例化即可。这样一个类在很多地方被实例化，当类名或参数发生变化时，工厂模式可简单快捷地在工厂类下的方法中一次性修改，避免了一个个的去修改实例化的对象。 工厂模式分为：简单工厂模式">
+<meta property="og:description" content="Linux系统基本上分两大类：1 RedHat系列：Redhat、Centos、Fedora等；2 Debian系列：Debian、Ubuntu等；对于RedHat系列：1 常见的安装包格式rpm包，安装rpm包的命令是 “rpm -参数”；2 包管理工具 yum；3 支持tar包；yum可以用于运作rpm包，常用命令如下：123456789yum install &amp;lt;package_name">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-24T14:40:16.449Z">
+<meta property="og:updated_time" content="2019-04-29T17:17:13.869Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PHP的工厂模式实现">
-<meta name="twitter:description" content="工厂模式是一种非常常用的模式，正如其名字所示，确实是对象实例的生产工厂。某些意义上，工厂模式提供了通用的方法有助于我们去获取对象，而不需要关心其具体的内在的实现。使用场景：new实例化类时，每次实例化只需调用工厂类中的方法实例化即可。这样一个类在很多地方被实例化，当类名或参数发生变化时，工厂模式可简单快捷地在工厂类下的方法中一次性修改，避免了一个个的去修改实例化的对象。 工厂模式分为：简单工厂模式">
+<meta name="twitter:title" content="apt-get和yum的区别">
+<meta name="twitter:description" content="Linux系统基本上分两大类：1 RedHat系列：Redhat、Centos、Fedora等；2 Debian系列：Debian、Ubuntu等；对于RedHat系列：1 常见的安装包格式rpm包，安装rpm包的命令是 “rpm -参数”；2 包管理工具 yum；3 支持tar包；yum可以用于运作rpm包，常用命令如下：123456789yum install &amp;lt;package_name">
 
 
 
 
 
 
-  <link rel="canonical" href="http://www.terrytang.top/201903/post/factorypattern.html">
+  <link rel="canonical" href="http://www.terrytang.top/201810/post/1dc30d45.html">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>PHP的工厂模式实现 | terry.Tang's Blog</title>
+  <title>apt-get和yum的区别 | terry.Tang's Blog</title>
   
 
 
@@ -386,7 +386,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.terrytang.top/201903/post/factorypattern.html">
+    <link itemprop="mainEntityOfPage" href="http://www.terrytang.top/201810/post/1dc30d45.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="terry.Tang">
@@ -403,7 +403,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">PHP的工厂模式实现
+          <h1 class="post-title" itemprop="name headline">apt-get和yum的区别
 
               
             
@@ -429,7 +429,7 @@
                 
               
 
-              <time title="创建时间：2019-03-03 11:40:00" itemprop="dateCreated datePublished" datetime="2019-03-03T11:40:00+08:00">2019-03-03</time>
+              <time title="创建时间：2018-10-28 21:49:00" itemprop="dateCreated datePublished" datetime="2018-10-28T21:49:00+08:00">2018-10-28</time>
             
 
             
@@ -437,12 +437,30 @@
 		  
 		  
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
 		  
 		  <span title="字数统计"> | 
-			字数统计 1k字
+			字数统计 448字
 		  </span>
 		  <span title="阅读时长"> | 
-			阅读时长 5分钟
+			阅读时长 1分钟
 		  </span>
 		  <span title="阅读次数"> | 
 			阅读次数 次
@@ -475,12 +493,8 @@
       
 
       
-        <p>工厂模式是一种非常常用的模式，正如其名字所示，确实是对象实例的生产工厂。某些意义上，工厂模式提供了通用的方法有助于我们去获取对象，而不需要关心其具体的内在的实现。<br>使用场景：new实例化类时，每次实例化只需调用工厂类中的方法实例化即可。这样一个类在很多地方被实例化，当类名或参数发生变化时，工厂模式可简单快捷地在工厂类下的方法中一次性修改，避免了一个个的去修改实例化的对象。</p>
-<p>工厂模式分为：简单工厂模式、工厂方法模式、抽象工厂模式。</p>
-<p>简单工厂模式：通过静态方法创建对象。可以理解成，只负责生产同一等级结构中的任何一个产品，但是不能新增产品。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">/** </span><br><span class="line"> *简单工厂模式 </span><br><span class="line"> **/</span><br><span class="line">interface userProperties &#123; </span><br><span class="line">	function getUsername(); </span><br><span class="line">	function getGender(); </span><br><span class="line">	function getJob(); </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">class User implements userProperties &#123; </span><br><span class="line">	private $username;</span><br><span class="line">	private $gender;</span><br><span class="line">	private $job;</span><br><span class="line">	</span><br><span class="line">	public function __construct($username, $gender, $job) &#123; </span><br><span class="line">		$this-&gt;username = $username; </span><br><span class="line">		$this-&gt;gender = $gender; </span><br><span class="line">		$this-&gt;job = $job; </span><br><span class="line">	&#125; </span><br><span class="line">  </span><br><span class="line">	public function getUsername() &#123; </span><br><span class="line">		return $this-&gt;username; </span><br><span class="line">	&#125; </span><br><span class="line">  </span><br><span class="line">	public function getGender() &#123; </span><br><span class="line">		return $this-&gt;gender; </span><br><span class="line">	&#125; </span><br><span class="line">  </span><br><span class="line">	public function getJob() &#123; </span><br><span class="line">		return $this-&gt;job; </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line">  </span><br><span class="line">class userFactory &#123; </span><br><span class="line">	static public function createUser($properties = []) &#123; </span><br><span class="line">		return new User($properties[&apos;username&apos;], $properties[&apos;gender&apos;], $properties[&apos;job&apos;]); </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line">  </span><br><span class="line">$employers = [ </span><br><span class="line">	[&apos;username&apos; =&gt; &apos;Jack&apos;, &apos;gender&apos; =&gt; &apos;male&apos;, &apos;job&apos; =&gt; &apos;coder&apos;], </span><br><span class="line">	[&apos;username&apos; =&gt; &apos;Marry&apos;, &apos;gender&apos; =&gt; &apos;female&apos;, &apos;job&apos; =&gt; &apos;designer&apos;], </span><br><span class="line">]; </span><br><span class="line"></span><br><span class="line">$user = userFactory::createUser($employers[0]); </span><br><span class="line">echo $user-&gt;getUsername();</span><br></pre></td></tr></table></figure></p>
-<p>工厂方法模式：去掉了简单工厂模式中方法的静态属性，使其可以被子类集成，定义一个创建对象的接口，让子类去决定实例化哪个类。可以理解成，用来生产同一等级结构中的固定产品，但是支持增加产品。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> *工厂方法模式</span><br><span class="line"> **/</span><br><span class="line">interface userProperties &#123; </span><br><span class="line">	function getUsername(); </span><br><span class="line">	function getGender(); </span><br><span class="line">	function getJob(); </span><br><span class="line">&#125; </span><br><span class="line">  </span><br><span class="line">interface createUser &#123; </span><br><span class="line">	function create($properties); </span><br><span class="line">&#125; </span><br><span class="line">  </span><br><span class="line">class User implements userProperties &#123; </span><br><span class="line">	private $username; </span><br><span class="line">	private $gender; </span><br><span class="line">	private $job; </span><br><span class="line">	public function __construct($username, $gender, $job) &#123; </span><br><span class="line">		$this-&gt;username = $username; </span><br><span class="line">		$this-&gt;gender = $gender; </span><br><span class="line">		$this-&gt;job = $job; </span><br><span class="line">	&#125; </span><br><span class="line">  </span><br><span class="line">	public function getUsername() &#123; </span><br><span class="line">		return $this-&gt;username; </span><br><span class="line">	&#125; </span><br><span class="line">  </span><br><span class="line">	public function getGender() &#123; </span><br><span class="line">		return $this-&gt;gender; </span><br><span class="line">	&#125; </span><br><span class="line">  </span><br><span class="line">	public function getJob() &#123; </span><br><span class="line">		return $this-&gt;job; </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line">  </span><br><span class="line">class userFactory &#123; </span><br><span class="line">	private $user; </span><br><span class="line">	public function __construct($properties = []) &#123; </span><br><span class="line">		$this-&gt;user = new User($properties[&apos;username&apos;], $properties[&apos;gender&apos;], $properties[&apos;job&apos;]); </span><br><span class="line">	&#125; </span><br><span class="line">  </span><br><span class="line">	public function getUser() &#123; </span><br><span class="line">		return $this-&gt;user; </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line">  </span><br><span class="line">class FactoryMan implements createUser &#123; </span><br><span class="line">	function create($properties) &#123; </span><br><span class="line">		return new userFactory($properties); </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line">  </span><br><span class="line">class FactoryWoman implements createUser &#123; </span><br><span class="line">	function create($properties) &#123;</span><br><span class="line">		return new userFactory($properties); </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line">  </span><br><span class="line">class clientUser &#123; </span><br><span class="line">	static public function getClient($properties) &#123; </span><br><span class="line">		$fac = new FactoryMan; </span><br><span class="line">		$man = $fac-&gt;create($properties); </span><br><span class="line">		echo $man-&gt;getUser()-&gt;getUsername(); </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line">  </span><br><span class="line">$employers = [ </span><br><span class="line">	[&apos;username&apos; =&gt; &apos;Jack&apos;, &apos;gender&apos; =&gt; &apos;male&apos;, &apos;job&apos; =&gt; &apos;coder&apos;], </span><br><span class="line">	[&apos;username&apos; =&gt; &apos;Marry&apos;, &apos;gender&apos; =&gt; &apos;female&apos;, &apos;job&apos; =&gt; &apos;designer&apos;], </span><br><span class="line">]; </span><br><span class="line">$user = clientUser::getClient($employers[0]);</span><br></pre></td></tr></table></figure>
-<p>抽象工厂模式：提供一个创建一系列相关或者相互依赖的对象的接口。可以理解成，用来生产不用类型的全部产品，但是不能增加新品，支持增加新的类型。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> *抽象工厂模式</span><br><span class="line"> **/</span><br><span class="line">interface userProperties &#123; </span><br><span class="line">	function getUsername(); </span><br><span class="line">	function getGender(); </span><br><span class="line">	function getJob(); </span><br><span class="line">&#125; </span><br><span class="line">  </span><br><span class="line">interface createUser &#123; //将对象的创建抽象成一个接口 </span><br><span class="line">	function createOpen($properties);//内向创建 </span><br><span class="line">	function createIntro($properties);//外向创建 </span><br><span class="line">&#125; </span><br><span class="line">  </span><br><span class="line">class User implements userProperties &#123; </span><br><span class="line">	private $username; </span><br><span class="line">	private $gender; </span><br><span class="line">	private $job; </span><br><span class="line">	public function __construct($username, $gender, $job) &#123; </span><br><span class="line">		$this-&gt;username = $username; </span><br><span class="line">		$this-&gt;gender = $gender; </span><br><span class="line">		$this-&gt;job = $job; </span><br><span class="line">	&#125; </span><br><span class="line">  </span><br><span class="line">	public function getUsername() &#123; </span><br><span class="line">		return $this-&gt;username; </span><br><span class="line">	&#125; </span><br><span class="line">  </span><br><span class="line">	public function getGender() &#123; </span><br><span class="line">		return $this-&gt;gender; </span><br><span class="line">	&#125; </span><br><span class="line">  </span><br><span class="line">	public function getJob() &#123; </span><br><span class="line">		return $this-&gt;job; </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line">  </span><br><span class="line">class userFactory &#123; </span><br><span class="line">	private $user; </span><br><span class="line">	public function __construct($properties = []) &#123; </span><br><span class="line">		$this-&gt;user = new User($properties[&apos;username&apos;], $properties[&apos;gender&apos;], $properties[&apos;job&apos;]); </span><br><span class="line">	&#125; </span><br><span class="line">  </span><br><span class="line">	public function getUser() &#123; </span><br><span class="line">		return $this-&gt;user; </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line">  </span><br><span class="line">class FactoryMan implements createUser &#123; </span><br><span class="line">	function createOpen($properties) &#123; </span><br><span class="line">		return new userFactory($properties); </span><br><span class="line">	&#125; </span><br><span class="line">  </span><br><span class="line">	function createIntro($properties) &#123; </span><br><span class="line">		return new userFactory($properties); </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line">  </span><br><span class="line">class FactoryWoman implements createUser &#123; </span><br><span class="line">	function createOpen($properties) &#123; </span><br><span class="line">		return new userFactory($properties); </span><br><span class="line">	&#125; </span><br><span class="line">  </span><br><span class="line">	function createIntro($properties) &#123; </span><br><span class="line">		return new userFactory($properties); </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line">  </span><br><span class="line">class clientUser &#123; </span><br><span class="line">	static public function getClient($properties) &#123; </span><br><span class="line">		$fac = new FactoryMan; </span><br><span class="line">		$man = $fac-&gt;createOpen($properties); </span><br><span class="line">		echo $man-&gt;getUser()-&gt;getUsername(); </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line">  </span><br><span class="line">$employers = [ </span><br><span class="line">	[&apos;username&apos; =&gt; &apos;Jack&apos;, &apos;gender&apos; =&gt; &apos;male&apos;, &apos;job&apos; =&gt; &apos;coder&apos;], </span><br><span class="line">	[&apos;username&apos; =&gt; &apos;Marry&apos;, &apos;gender&apos; =&gt; &apos;female&apos;, &apos;job&apos; =&gt; &apos;designer&apos;], </span><br><span class="line">]; </span><br><span class="line">$user = clientUser::getClient($employers[0]);</span><br></pre></td></tr></table></figure></p>
+        <p>Linux系统基本上分两大类：<br>1 RedHat系列：Redhat、Centos、Fedora等；<br>2 Debian系列：Debian、Ubuntu等；<br>对于RedHat系列：<br>1 常见的安装包格式rpm包，安装rpm包的命令是 “rpm -参数”；<br>2 包管理工具 yum；<br>3 支持tar包；<br>yum可以用于运作rpm包，常用命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">yum install &lt;package_name&gt;  //安装包</span><br><span class="line">yum remove &lt;package_name&gt;  //卸载包</span><br><span class="line">yum update &lt;package_name&gt; //更新包</span><br><span class="line">yum search &lt;keyword&gt;  //查找软件包</span><br><span class="line">yum list  //列出所有可安装的软件包</span><br><span class="line">yum list updates  //列出所有可更新的软件包</span><br><span class="line">yum list installed  //列出所有已安装的软件包</span><br><span class="line">yum list extras //列出所有已安装但不在Yum Repository内的软件包</span><br><span class="line">yum list &lt;package_name&gt;  //列出所指定的软件包</span><br></pre></td></tr></table></figure></p>
+<p>对于Debian系列：<br>1 常见的安装包格式deb包，安装deb包的命令是 “dpkg -参数”；<br>2 包管理工具 apt-get；<br>3 支持tar包；<br>apt-get可以用于运作deb包，常用命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">apt-get install &lt;package_name&gt; //安装包</span><br><span class="line">apt-get remove &lt;package_name&gt; //卸载包</span><br><span class="line">apt-get update &lt;package_name&gt;  //更新包</span><br><span class="line">apt-cache search package //搜索包</span><br><span class="line">apt-cache show package //获取包的相关信息</span><br><span class="line">sudo apt-get install package -- reinstall //重新安装包</span><br><span class="line">sudo apt-get -f install //修复安装&quot;-f = --fix-missing&quot;</span><br><span class="line">sudo apt-get remove package -- purge // 删除包，包括删除配置文件等</span><br><span class="line">sudo apt-get update //更新源</span><br><span class="line">sudo apt-get upgrade //更新已安装的包</span><br><span class="line">sudo apt-get dist-upgrade //升级系统</span><br><span class="line">sudo apt-get dselect-upgrade //使用dselect升级</span><br><span class="line">apt-cache depends package //了解使用依赖</span><br><span class="line">apt-cache rdepends package //是查看该包被哪些包依赖</span><br><span class="line">sudo apt-get build-dep package //安装相关的编译环境</span><br><span class="line">apt-get source package //下载该包的源代码</span><br><span class="line">sudo apt-get clean &amp;&amp; sudo apt-get autoclean //清理无用的包</span><br><span class="line">sudo apt-get check //检查是否有损坏的依赖</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -543,7 +557,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="http://www.terrytang.top/201903/post/factorypattern.html" title="PHP的工厂模式实现">http://www.terrytang.top/201903/post/factorypattern.html</a>
+    <a href="http://www.terrytang.top/201810/post/1dc30d45.html" title="apt-get和yum的区别">http://www.terrytang.top/201810/post/1dc30d45.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -567,9 +581,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/PHP/" rel="tag"># PHP</a>
-          
-            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
           
         </div>
       
@@ -582,15 +594,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/201903/post/singletonpattern.html" rel="next" title="PHP的单例模式实现">
-                <i class="fa fa-chevron-left"></i> PHP的单例模式实现
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/201811/post/33f59116.html" rel="prev" title="PHP获取文件后缀的常用方法">
+                PHP获取文件后缀的常用方法 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>

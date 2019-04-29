@@ -93,4 +93,15 @@
         <tag>Hexo</tag>
       </tags>
   </entry>
+  <entry>
+    <title><![CDATA[PHP获取文件后缀的常用方法]]></title>
+    <url>%2F201811%2Fpost%2F33f59116.html</url>
+    <content type="text"><![CDATA[思路一：利用explode()将路径字符串切割成数组，数组的最后一个值即为后缀名。123$file = &quot;&#123;$path&#125;/file.jpg“;$array = explode(&apos;.&apos;, $file);$suffix = end($array); 123$file = &quot;&#123;$path&#125;/file.jpg“;$array = explode(&apos;.&apos;, $file);$suffix = $array[count($array)-1]; 思路二：利用pathinfo()函数。pathinfo()函数以数组的形式返回文件路径的信息。包括以下的数组元素：123[dirname][basename][extension] 123$file = &quot;&#123;$path&#125;/file.jpg“;$array = pathinfo($file);$suffix = $array[&apos;extension&apos;]; 12$file = &quot;&#123;$path&#125;/file.jpg“;$suffix = pathinfo($file, PATHINFO_EXTENSION); 思路三：利用strstr()进行字符串截取。strrpos() 会返回一个字符在另一个字符串中最后一次出现的位置，再利用substr()从该位置的后一位开始截取。12$file = &quot;&#123;$path&#125;/file.jpg“;$suffix = strstr($file, strrpos($file, &apos;.&apos;)+1); strrchr()函数会查找字符串在另一个字符串中最后一次出现的位置，并返回从该位置到字符串结尾的所有字符。1234567$file = &quot;&#123;$path&#125;/file.jpg“;$suffix = strstr(strrchr($file, &apos;.&apos;), 1);``` 还有一种方式是我看网友写的，通过strrev()函数反转字符串，但是不太建议这种方法。```code$file = &quot;&#123;$path&#125;/file.jpg“;$suffix = strrev(explode(&apos;.&apos;, strrev($file))[0]);]]></content>
+      <categories>
+        <category>PHP</category>
+      </categories>
+      <tags>
+        <tag>PHP 面试题</tag>
+      </tags>
+  </entry>
 </search>
